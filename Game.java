@@ -34,30 +34,45 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        mossystoneroom = new Room("You awake on a cold stone floor." +
+        "A greeny fuzzy moss is overtaking several walls");
+        pitchroom = new Room("You enter a poorly lit room, it is undecorated" +
+        "save for a barrel of pitch in the corner.");
+        
+        tinderboxroom = new Room("You walk into a small square room, " +
+        "completely empty save for the remnants of" +
+        "a long snuffed campfire,a small tinder box lays discarded off to the side.");
+        
+        sewer = new Room("The room you step into reverberates with the sound of running water");
+        
+        grubgrubroom = new Room("You step out of the sewer, and into a room with charred walls smelling of" +
+        "smoked meats. You look around and immediately see a small green creature wearing a chefs hat, tinted grey" +
+        "from smoke. It notices you, and shouts 'hello! my name grub grub, you want buy some meats?");
+        
+        stairway = new Room("a stairway, goes up to grubgrubs's grubhub, and down to the next level of the maze.");
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        mossystoneroom.setExit("east", pitchroom);
+        mossystoneroom.setExit("west", tinderboxroom);
 
-        theater.setExit("west", outside);
+        pitchroom.setExit("west", mossystoneroom);
 
-        pub.setExit("east", outside);
+        tinderboxroom.setExit("east", mossystoneroom);
+        tinderboxroom.setExit("south", sewer);
+        
+        sewer.setExit("north", tinderboxroom);
+        sewer.setExit("east", grubgrubroom);
+        
+        grubgrubroom.setExit("west", sewer);
+       
+        stairway.setExit("west",  grubgrubroom);
+        
+       
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = mossystoneroom;  // start game outside
     }
 
     /**
