@@ -34,7 +34,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway;
+        Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway, stairwayb2;
       
         // create the rooms
         mossystoneroom = new Room("You awake on a cold stone floor." +
@@ -54,6 +54,7 @@ public class Game
         
         stairway = new Room("a stairway, goes up to grubgrubs's grubhub, and down to the next level of the maze.");
         
+        stairwayb2 = new Room("a stairway, goes up to the first floor, north is another room");
         // initialise room exits
         mossystoneroom.setExit("east", pitchroom);
         mossystoneroom.setExit("west", tinderboxroom);
@@ -69,7 +70,9 @@ public class Game
         grubgrubroom.setExit("west", sewer);
        
         stairway.setExit("west",  grubgrubroom);
+        stairway.setExit("east", stairwayb2);
         
+        stairwayb2.setExit("east" , stairway);
        
 
         currentRoom = mossystoneroom;  // start game outside
@@ -99,8 +102,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the Labyrinth!");
+        System.out.println("A maze made by an evil wizard, dare you try to escape?");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
