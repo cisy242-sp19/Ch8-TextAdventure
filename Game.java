@@ -1,8 +1,6 @@
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
+ *  This class is the main class of the "The Labyrinth" application. 
+ *  "Labyrinth" is a very simple, text based adventure game. 
  * 
  *  To play this game, create an instance of this class and call the "play"
  *  method.
@@ -11,8 +9,9 @@
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2011.08.10
+ * 
+ * @author Andrew Riganati
+ * @version 2019.08.04
  */
 
 public class Game 
@@ -34,7 +33,9 @@ public class Game
      */
     private void createRooms()
     {
-        Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway, stairwayb2;
+        Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway, stairwayb2,
+        northstairroom , southstairroom , crossroads , watercrosscorner, waterfallroom ,
+        hatmanroom , bridgeroom , wizardend;
       
         // create the rooms
         mossystoneroom = new Room("You awake on a cold stone floor." +
@@ -54,7 +55,30 @@ public class Game
         
         stairway = new Room("a stairway, goes up to grubgrubs's grubhub, and down to the next level of the maze.");
         
-        stairwayb2 = new Room("a stairway, goes up to the first floor, north is another room");
+        stairwayb2 = new Room("a stairway, goes up to the first floor, north is another room," +
+      "south is another room");
+      
+      //TODO: give room a purpose
+      northstairroom = new Room("This is the north stair room, if this description is still here tell the developer!");
+      //TODO: give room a purpose
+      southstairroom = new Room("This is the south stair room, if this description is still here telll the developer!");
+      
+      crossroads = new Room(" you enter the new room and come across multiple paths, east is towards the stairs" +
+      "to the distant west you hear the sound of rushing water" + "to the south you hear the distinct sound of a chasm");
+      
+      watercrosscorner = new Room("THis is the watercrosscorner, if this description is still here tell a developer");
+      
+      //plank to cross the bridge room is found here
+      waterfallroom = new Room("TODO: replace me");
+      
+      bridgeroom = new Room("You enter the next room, and wave your arms frantically as you nearly fall into an abyss" +
+      "due to lack of floor. You look around, you see a plank resting on a stone pillar,  the other end of the plank rests" +
+      "on the archway leading further south, you'll need something to bridge th gap to get to the stone pillar however!");
+      
+      hatmanroom = new Room("TODO: replace me");
+      
+      wizardend = new Room("TODO: replace me");
+      
         // initialise room exits
         mossystoneroom.setExit("east", pitchroom);
         mossystoneroom.setExit("west", tinderboxroom);
@@ -73,9 +97,25 @@ public class Game
         stairway.setExit("east", stairwayb2);
         
         stairwayb2.setExit("east" , stairway);
-       
+        stairwayb2.setExit("north" , northstairroom);
+        stairwayb2.setExit("south" , southstairroom);
+        
+        northstairroom.setExit("south" , stairwayb2);
+        
+        southstairroom.setExit("north" , stairwayb2);
+        southstairroom.setExit("west" , crossroads);
+        
+        crossroads.setExit("east" , southstairroom);
+        crossroads.setExit("west" , watercrosscorner);
+        crossroads.setExit("south" , bridgeroom);
+        
+        bridgeroom.setExit("north" , crossroads);
+        bridgeroom.setExit("south" , hatmanroom);
+        
+        hatmanroom.setExit("north" , bridgeroom);
+        hatmanroom.setExit("east" , wizardend);
 
-        currentRoom = mossystoneroom;  // start game outside
+        currentRoom = mossystoneroom;  // start game in the mossy stone room.
     }
 
     /**
@@ -136,6 +176,17 @@ public class Game
             case QUIT:
                 wantToQuit = quit(command);
                 break;
+                
+            case LOOK:
+            System.out.println(currentRoom.getLongDescription());
+            break;
+            
+            // case EXAMINE
+            
+            // case USE
+            
+            // case TAKE
+            //inventory.takeitem(item)
         }
         return wantToQuit;
     }
