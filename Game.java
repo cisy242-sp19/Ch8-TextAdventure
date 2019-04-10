@@ -56,28 +56,27 @@ public class Game
         stairway = new Room("a stairway, goes up to grubgrubs's grubhub, and down to the next level of the maze.");
         
         stairwayb2 = new Room("a stairway, goes up to the first floor, north is another room," +
-      "south is another room");
+            "south is another room");
       
       //TODO: give room a purpose
-      northstairroom = new Room("This is the north stair room, if this description is still here tell the developer!");
+        northstairroom = new Room("TODO: Replace ME");
       //TODO: give room a purpose
-      southstairroom = new Room("This is the south stair room, if this description is still here telll the developer!");
+        southstairroom = new Room("TODO: Replace Me");
       
-      crossroads = new Room(" you enter the new room and come across multiple paths, east is towards the stairs" +
-      "to the distant west you hear the sound of rushing water" + "to the south you hear the distinct sound of a chasm");
+        crossroads = new Room(" you enter the new room and come across multiple paths, east is towards the stairs" +
+        "to the distant west you hear the sound of rushing water" + "to the south you hear the distinct sound of a chasm");
       
-      watercrosscorner = new Room("THis is the watercrosscorner, if this description is still here tell a developer");
-      
+        watercrosscorner = new Room("TODO: Replace me");
       //plank to cross the bridge room is found here
-      waterfallroom = new Room("TODO: replace me");
+        waterfallroom = new Room("TODO: replace me");
       
-      bridgeroom = new Room("You enter the next room, and wave your arms frantically as you nearly fall into an abyss" +
-      "due to lack of floor. You look around, you see a plank resting on a stone pillar,  the other end of the plank rests" +
-      "on the archway leading further south, you'll need something to bridge th gap to get to the stone pillar however!");
+        bridgeroom = new Room("You enter the next room, and wave your arms frantically as you nearly fall into an abyss" +
+        "due to lack of floor. You look around, you see a plank resting on a stone pillar,  the other end of the plank rests" +
+        "on the archway leading further south, you'll need something to bridge th gap to get to the stone pillar however!");
       
-      hatmanroom = new Room("TODO: replace me");
+        hatmanroom = new Room("TODO: replace me");
       
-      wizardend = new Room("TODO: replace me");
+        wizardend = new Room("TODO: replace me");
       
         // initialise room exits
         mossystoneroom.setExit("east", pitchroom);
@@ -181,6 +180,10 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
             break;
             
+            case PROGRAMJAVA:
+                whywouldyoudothis();
+                break;
+            
             // case EXAMINE
             
             // case USE
@@ -201,12 +204,17 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around at the maze.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
     }
-
+    
+    public void whywouldyoudothis()
+    {
+        System.out.println("What in the sweet merciful @#$% have you brought upon this cursed land");
+    }
+    
     /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.

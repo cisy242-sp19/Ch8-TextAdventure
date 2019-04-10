@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 /**
  *The inventory class is dedicated to storing all items used by the player
  *in the game, and their present state.
