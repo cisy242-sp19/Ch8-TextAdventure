@@ -18,7 +18,14 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    private Room lastRoom;
+    
+    public static void main(String[] args)
+    {
+        Game game = new Game();
+        game.play();
+    }
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -27,7 +34,8 @@ public class Game
         createRooms();
         parser = new Parser();
     }
-
+    
+    
     /**
      * Create all the rooms and link their exits together.
      */
@@ -184,6 +192,9 @@ public class Game
                 whywouldyoudothis();
                 break;
             
+                case BACK:
+                Back();
+                break;
             // case EXAMINE
             
             // case USE
@@ -214,7 +225,7 @@ public class Game
     {
         System.out.println("What in the sweet merciful @#$% have you brought upon this cursed land");
     }
-    
+   
     /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
@@ -228,7 +239,8 @@ public class Game
         }
 
         String direction = command.getSecondWord();
-
+        
+        Room lastRoom = currentRoom;
         // Try to leave current room.
         Room nextRoom = currentRoom.getExit(direction);
 
@@ -240,7 +252,23 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
         }
     }
-
+    
+     /**
+      * Go back to the previous room, unless theres no way back.
+      */
+    public void Back()
+    {
+        
+        Room nextRoom = lastRoom;
+        if (lastRoom == null) {
+            System.out.println("theres no way back");
+        }
+        else {
+            currentRoom = nextRoom;
+            System.out.println(currentRoom.getLongDescription());
+        }
+    }
+    
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.

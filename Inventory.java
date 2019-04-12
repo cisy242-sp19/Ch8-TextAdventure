@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 /**
  *The inventory class is dedicated to storing all items used by the player
  *in the game, and their present state.
@@ -11,6 +12,8 @@ public class Inventory
 {
     // instance variables - replace the example below with your own
     //torch is set an int instead of boolean due to having multiple states
+    private boolean found;
+    private int weight;
     private int torch;
     private boolean tinderbox;
     private boolean hat;
