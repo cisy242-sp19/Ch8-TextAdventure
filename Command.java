@@ -21,6 +21,7 @@ public class Command
 {
     private CommandWord commandWord;
     private String secondWord;
+    private String useCase;
 
     /**
      * Create a command object. First and second words must be supplied, but
@@ -29,10 +30,11 @@ public class Command
      *                  was not recognised.
      * @param secondWord The second word of the command. May be null.
      */
-    public Command(CommandWord commandWord, String secondWord)
+    public Command(CommandWord commandWord, String secondWord , String useCase)
     {
         this.commandWord = commandWord;
         this.secondWord = secondWord;
+        this.useCase = useCase;
     }
 
     /**
@@ -53,6 +55,11 @@ public class Command
         return secondWord;
     }
 
+    public String getUseCase()
+    {
+        return useCase;
+    }
+    
     /**
      * @return true if this command was not understood.
      */
@@ -68,5 +75,10 @@ public class Command
     {
         return (secondWord != null);
     }
+    
+    public boolean hasUseCase(){
+        return (useCase != null);
+    }
+
 }
 

@@ -10,7 +10,7 @@ public enum CommandWord
     // A value for each command word along with its
     // corresponding user interface string.
     GO("go"), QUIT("quit"), HELP("help"),LOOK("look"),
-    BACK("back"), PROGRAMJAVA("programjava"), UNKNOWN("?");
+    BACK("back"), PROGRAMJAVA("programjava"), TAKE("take"), UNKNOWN("?");
     
     // The command string.
     private String commandString;

@@ -200,6 +200,7 @@ public class Game
             // case USE
             
             // case TAKE
+            
             //inventory.takeitem(item)
         }
         return wantToQuit;
@@ -253,11 +254,28 @@ public class Game
         }
     }
     
+    /**
+     * Responsible for executing the action of picking up items
+     */
+    public void takeItem(Command command){
+        if(!command.hasSecondWord()){
+            //
+        }
+    }
+    
+    /**
+     * Responsible for the use of items the player currently has.
+     */
+    public void useItem(Command command){
+        if(!command.hasSecondWord()){
+            //
+        }
+    }
+    
      /**
       * Go back to the previous room, unless theres no way back.
       */
-    public void Back()
-    {
+    public void Back(){
         
         Room nextRoom = lastRoom;
         if (lastRoom == null) {

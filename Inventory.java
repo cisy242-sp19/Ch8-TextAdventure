@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 /**
- *The inventory class is dedicated to storing all items used by the player
+ *The inventory class is dedicated to storing all items used by the player, as well as handling their use
  *in the game, and their present state.
  *
  * @author Andrew Riganati
