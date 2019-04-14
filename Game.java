@@ -35,7 +35,6 @@ public class Game
         parser = new Parser();
     }
     
-    
     /**
      * Create all the rooms and link their exits together.
      */
@@ -67,14 +66,18 @@ public class Game
             "south is another room");
       
       //TODO: give room a purpose
-        northstairroom = new Room("TODO: Replace ME");
+        northstairroom = new Room("This room seems to be empty and devoid of" + 
+        "purpose. Perhaps the builders built it to make the maze more confusing" +
+        "or maybe they just needed more rooms to qualify for tax exempt status");
       //TODO: give room a purpose
-        southstairroom = new Room("TODO: Replace Me");
+        southstairroom = new Room("You enter an L shaped room, to the north is the" +
+        "staircase you came down, you faintly hear the sound of rushing water to the west");
       
         crossroads = new Room(" you enter the new room and come across multiple paths, east is towards the stairs" +
         "to the distant west you hear the sound of rushing water" + "to the south you hear the distinct sound of a chasm");
       
-        watercrosscorner = new Room("TODO: Replace me");
+        watercrosscorner = new Room("You enter yet another L shaped room, to the east is the crossroads" +
+        "To the north you hear the roar of rushing water, now very close.");
       //plank to cross the bridge room is found here
         waterfallroom = new Room("TODO: replace me");
       
@@ -82,9 +85,11 @@ public class Game
         "due to lack of floor. You look around, you see a plank resting on a stone pillar,  the other end of the plank rests" +
         "on the archway leading further south, you'll need something to bridge th gap to get to the stone pillar however!");
       
-        hatmanroom = new Room("TODO: replace me");
+        hatmanroom = new Room("You enter the room and see a man frantically searching for his hat");
       
-        wizardend = new Room("TODO: replace me");
+        wizardend = new Room("You enter a room with no other exits, you have a feeling" +
+        "the wizard should be here, but he is not. Perhaps one of his spells went" +
+        "awry, and he was lost to the land of parse.");
       
         // initialise room exits
         mossystoneroom.setExit("east", pitchroom);
@@ -124,7 +129,8 @@ public class Game
 
         currentRoom = mossystoneroom;  // start game in the mossy stone room.
     }
-
+    
+    
     /**
      *  Main play routine.  Loops until end of play.
      */
@@ -199,15 +205,24 @@ public class Game
             
             // case USE
             
-            // case TAKE
-            
+             //case TAKE:
+             //takeitem();
+             //break;
             //inventory.takeitem(item)
         }
         return wantToQuit;
     }
-
+    
+    
     // implementations of user commands:
-
+    /**
+    private void takeitem()
+    {
+        if(currentRoom = mossystoneroom && Inventory.torch = false ){
+        
+        }
+    }
+    */
     /**
      * Print out some help information.
      * Here we print some stupid, cryptic message and a list of the 

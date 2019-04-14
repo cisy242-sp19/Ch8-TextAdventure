@@ -14,31 +14,32 @@ public class Inventory
     //torch is set an int instead of boolean due to having multiple states
     private boolean found;
     private int weight;
-    private int torch;
+    private int torchstate;
+    private boolean torch;
     private boolean tinderbox;
     private boolean hat;
     private boolean ironspit;
     private boolean plank;
     private ArrayList<Inventory> backpack;
+    private ArrayList<Inventory> items;
     /**
      * Constructor for objects of class Inventory
-     * instanciates the inital state of each item. I.E it not having 
+     * instanciates the inital state of each item. I.E existing and not having 
      * been picked up.
      */
     public Inventory()
     {
         // initialise instance variables
         //torch has three states, dying (0), pitch soaked (1), and lit(2)
-        //torch = 0;
-        //ironspit = false;
-        //hat = false;
-        //plank = false;
+        torchstate = 0;
+        torch = false;
+        ironspit = false;
+        hat = false;
+        plank = false;
         backpack = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
     
     
-    private void takeitem(String item)
-    {
-    }
 }
