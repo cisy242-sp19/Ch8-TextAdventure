@@ -280,7 +280,9 @@ public class Game
      */
     public void takeItem(Command command){
         if(!command.hasSecondWord()){
-            //
+            //If user doesn't specify what to take, asks for clarification.
+            System.out.println("take what?");
+            return;
         }
     }
     

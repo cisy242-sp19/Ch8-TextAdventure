@@ -4,7 +4,9 @@ import java.util.HashMap;
 /**
  *The inventory class is dedicated to storing all items used by the player, as well as handling their use
  *in the game, and their present state.
- *
+ * 
+ * (parralell of command)
+ * 
  * @author Andrew Riganati
  * @version 2019.08.04
  */
@@ -14,14 +16,9 @@ public class Inventory
     //torch is set an int instead of boolean due to having multiple states
     private boolean found;
     private int weight;
-    private int torchstate;
-    private boolean torch;
-    private boolean tinderbox;
-    private boolean hat;
-    private boolean ironspit;
-    private boolean plank;
-    private ArrayList<Inventory> backpack;
-    private ArrayList<Inventory> items;
+    private Items Items;
+    private String itemAction;
+    private String useCase;
     /**
      * Constructor for objects of class Inventory
      * instanciates the inital state of each item. I.E existing and not having 
@@ -29,17 +26,26 @@ public class Inventory
      */
     public Inventory()
     {
-        // initialise instance variables
-        //torch has three states, dying (0), pitch soaked (1), and lit(2)
-        torchstate = 0;
-        torch = false;
-        ironspit = false;
-        hat = false;
-        plank = false;
-        backpack = new ArrayList<>();
-        items = new ArrayList<>();
+        this.Items = Items;
+        this.itemAction  = itemAction;
+       
     }
-
     
+     public Items getItems()
+    {
+        return Items;
+    }
     
+    public String getItemAction()
+    {
+        return itemAction;
+    }
+    
+    public boolean isTHINGGUMMYWHAT(){
+        return (Items == Items.THINGGUMMYWHAT);
+    }
+    
+    public boolean hasitemAction(){
+        return (itemAction != null);
+    }
 }

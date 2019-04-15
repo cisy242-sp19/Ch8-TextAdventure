@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.target=Items
-comment0.text=\r\n\ Enumeration\ class\ Items\ -\ would/will\ be\ where\ the\ enumerations\ values\ for\ items\r\n\ is\ stored.\ In\ the\ event\ that\ items\ are\ handled\ by\ a\ case\ switch.\r\n\r\n\ Andrew\ Riganati\r\n\ 4.13.2019\r\n
-numComments=1
+comment0.text=\r\n\ Enumeration\ class\ Items\ -\ would/will\ be\ where\ the\ enumerations\ values\ for\ items\r\n\ is\ stored.\ In\ the\ event\ that\ items\ are\ handled\ by\ a\ case\ switch.\r\n\r\n(parralell\ of\ commandword)\r\n\r\n\ Andrew\ Riganati\r\n\ 4.13.2019\r\n
+comment1.params=itemString
+comment1.target=Items(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
