@@ -20,6 +20,9 @@ public class Game
     private Room currentRoom;
     private Room lastRoom;
     
+    /**
+     * Acts as a play button for the game.
+     */
     public static void main(String[] args)
     {
         Game game = new Game();
@@ -79,7 +82,7 @@ public class Game
         watercrosscorner = new Room("You enter yet another L shaped room, to the east is the crossroads" +
         "To the north you hear the roar of rushing water, now very close.");
       //plank to cross the bridge room is found here
-        waterfallroom = new Room("TODO: replace me");
+        waterfallroom = new Room("You enter a room filled with the roar of rushing water");
       
         bridgeroom = new Room("You enter the next room, and wave your arms frantically as you nearly fall into an abyss" +
         "due to lack of floor. You look around, you see a plank resting on a stone pillar,  the other end of the plank rests" +
@@ -237,6 +240,9 @@ public class Game
         parser.showCommands();
     }
     
+    /**
+     * the output end of the programjava command. Asks you why you hate yourself.
+     */
     public void whywouldyoudothis()
     {
         System.out.println("What in the sweet merciful @#$% have you brought upon this cursed land");
