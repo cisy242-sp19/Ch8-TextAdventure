@@ -119,6 +119,7 @@ public class Game
         stairwayb2.setExit("south" , southstairroom);
         
         northstairroom.setExit("south" , stairwayb2);
+        northstairroom.setExit("north" , transporterRoom);
         
         southstairroom.setExit("north" , stairwayb2);
         southstairroom.setExit("west" , crossroads);
