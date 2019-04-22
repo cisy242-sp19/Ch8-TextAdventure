@@ -19,7 +19,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Room lastRoom;
-    
+    private Room nextRoom;
     /**
      * Acts as a play button for the game.
      */
@@ -45,7 +45,7 @@ public class Game
     {
         Room mossystoneroom, pitchroom, tinderboxroom, sewer, grubgrubroom, stairway, stairwayb2,
         northstairroom , southstairroom , crossroads , watercrosscorner, waterfallroom ,
-        hatmanroom , bridgeroom , wizardend;
+        hatmanroom , bridgeroom ,transporterRoom , wizardend;
       
         // create the rooms
         mossystoneroom = new Room("You awake on a cold stone floor." +
@@ -93,6 +93,9 @@ public class Game
         wizardend = new Room("You enter a room with no other exits, you have a feeling" +
         "the wizard should be here, but he is not. Perhaps one of his spells went" +
         "awry, and he was lost to the land of parse.");
+        
+        transporterRoom = new transporterRoom("As you enter the room everything begins to shimmer" +
+        "and then suddenly your surroundings have completely changed");
       
         // initialise room exits
         mossystoneroom.setExit("east", pitchroom);
@@ -129,7 +132,12 @@ public class Game
         
         hatmanroom.setExit("north" , bridgeroom);
         hatmanroom.setExit("east" , wizardend);
-
+        
+        transporterRoom.setExit("north" , waterfallroom);
+        transporterRoom.setExit("east" , grubgrubroom);
+        transporterRoom.setExit("south" , mossystoneroom);
+        transporterRoom.setExit("west" , sewer);
+        
         currentRoom = mossystoneroom;  // start game in the mossy stone room.
     }
     
@@ -264,7 +272,9 @@ public class Game
         
         Room lastRoom = currentRoom;
         // Try to leave current room.
+       
         Room nextRoom = currentRoom.getExit(direction);
+        
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
