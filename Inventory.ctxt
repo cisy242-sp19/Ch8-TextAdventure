@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Inventory
+comment0.text=\r\nThe\ inventory\ class\ is\ dedicated\ to\ storing\ all\ items\ used\ by\ the\ player,\ as\ well\ as\ handling\ their\ use\r\nin\ the\ game,\ and\ their\ present\ state.\r\n\ \r\n\ (parralell\ of\ command)\r\n\ \r\n\ @author\ Andrew\ Riganati\r\n\ @version\ 2019.08.04\r\n
+comment1.params=
+comment1.target=Inventory()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Inventory\r\n\ instanciates\ the\ inital\ state\ of\ each\ item.\ I.E\ existing\ and\ not\ having\ \r\n\ been\ picked\ up.\r\n
+comment2.params=
+comment2.target=Items\ getItems()
+comment3.params=
+comment3.target=java.lang.String\ getItemAction()
+comment4.params=
+comment4.target=boolean\ isTHINGGUMMYWHAT()
+comment5.params=
+comment5.target=boolean\ hasitemAction()
+numComments=6
